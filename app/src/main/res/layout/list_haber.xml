@@ -56,6 +56,13 @@
                         android:layout_height="wrap_content"
                         android:text="summary"
                         android:textAlignment="center" />
+                    <TextView
+                        android:id="@+id/url"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="url"
+                        android:textAlignment="center"
+                        android:visibility="gone"/>
 
                 </LinearLayout>
 

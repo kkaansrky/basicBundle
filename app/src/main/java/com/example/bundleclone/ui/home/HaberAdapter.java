@@ -16,6 +16,7 @@ import androidx.recyclerview.widget.RecyclerView;
 import com.bumptech.glide.Glide;
 import com.example.bundleclone.Haber;
 import com.example.bundleclone.R;
+import com.example.bundleclone.WebActivity;
 
 
 import java.util.List;
@@ -26,8 +27,9 @@ public class HaberAdapter extends RecyclerView.Adapter<HaberAdapter.ViewHolder> 
 
 
     public static class ViewHolder extends RecyclerView.ViewHolder implements View.OnClickListener {
-        private final TextView hood,summary;
+        private final TextView hood,summary,url;
         private final ImageView imageView;
+
 
         public ViewHolder(View view) {
             super(view);
@@ -35,7 +37,12 @@ public class HaberAdapter extends RecyclerView.Adapter<HaberAdapter.ViewHolder> 
             hood = view.findViewById(R.id.hood);
             summary = view.findViewById(R.id.summary);
             imageView = view.findViewById(R.id.imageView);
+            url = view.findViewById(R.id.url);
             view.setOnClickListener(this);
+        }
+
+        public TextView getUrl() {
+            return url;
         }
 
         public ImageView getImageView() {
@@ -52,21 +59,15 @@ public class HaberAdapter extends RecyclerView.Adapter<HaberAdapter.ViewHolder> 
 
         @Override
         public void onClick(View v) {
-//            TextView textView = (TextView) v.findViewById(R.id.filter);
-//            Log.d("LOGTAG", "clicked : name " + textView.getText().toString());
-//
-//            Intent intent = new Intent(v.getContext(), QuestionActivity.class);
-//            Bundle b = new Bundle();
-//            String numberOfExam = textView.getText().toString().substring(0, 2);
-//            if(textView.getText().toString().matches(".*Test")){
-//                b.putString("filter", numberOfExam + "testsilahli");
-//            }else if (textView.getText().toString().matches(".*Silahlı")) {
-//                b.putString("filter", numberOfExam + "silahli");
-//            } else {
-//                b.putString("filter", numberOfExam + "silahsiz");
-//            }
-//            intent.putExtras(b);
-//            v.getContext().startActivity(intent);
+            TextView textView = v.findViewById(R.id.url);
+
+            Intent intent = new Intent(v.getContext(), WebActivity.class);
+            Bundle b = new Bundle();
+            String url = textView.getText().toString();
+            b.putString("url", url);
+
+            intent.putExtras(b);
+            v.getContext().startActivity(intent);
         }
     }
 
@@ -97,6 +98,7 @@ public class HaberAdapter extends RecyclerView.Adapter<HaberAdapter.ViewHolder> 
         Log.d("TAG", "onBindViewHolder: "+ tempHaber.getUrl());
         viewHolder.getHood().setText(tempHaber.getBaslik());
         viewHolder.getSummary().setText(tempHaber.getOzet());
+        viewHolder.getUrl().setText(tempHaber.getUrl());
         Glide.with(mContext).load(tempHaber.getResim()).into(viewHolder.getImageView());
 
 
@@ -106,5 +108,9 @@ public class HaberAdapter extends RecyclerView.Adapter<HaberAdapter.ViewHolder> 
     @Override
     public int getItemCount() {
         return localDataSet.size();
+    }
+
+    public Haber getItem(int position) {
+        return localDataSet.get(position);
     }
 }
