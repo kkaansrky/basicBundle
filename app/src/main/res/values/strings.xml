@@ -1,0 +1,6 @@
+<resources>
+    <string name="app_name">BundleClone</string>
+    <string name="title_home">Haberler</string>
+    <string name="title_dashboard">Kategoriler</string>
+    <string name="title_notifications">Kaynaklar</string>
+</resources>

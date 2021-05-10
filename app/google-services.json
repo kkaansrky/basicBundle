@@ -1,0 +1,40 @@
+{
+  "project_info": {
+    "project_number": "1038621390936",
+    "firebase_url": "https://bundle-clone-default-rtdb.europe-west1.firebasedatabase.app",
+    "project_id": "bundle-clone",
+    "storage_bucket": "bundle-clone.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:1038621390936:android:90f8833dadf68514d0322d",
+        "android_client_info": {
+          "package_name": "com.example.bundleclone"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "1038621390936-scg3nukuuir2n6tttfjavadsh7d4fb05.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAYxJcpdsWZ985O2wtp--5gXpMBkW59RXw"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "1038621390936-scg3nukuuir2n6tttfjavadsh7d4fb05.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
