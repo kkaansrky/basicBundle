@@ -53,7 +53,7 @@ public class NotificationsFragment extends Fragment {
                         tempKaynak.add(haber.getKaynak());
                     }
                 }
-                ItemAdapter adapter = new ItemAdapter(tempKaynak,getContext());
+                ItemAdapter adapter = new ItemAdapter(tempKaynak,NotificationsFragment.this);
                 recyclerView.setAdapter(adapter);
             }
 

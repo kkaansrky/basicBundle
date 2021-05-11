@@ -52,7 +52,7 @@ public class DashboardFragment extends Fragment {
                         tempKategori.add(haber.getKategori());
                     }
                 }
-                ItemAdapter adapter = new ItemAdapter(tempKategori,getContext());
+                ItemAdapter adapter = new ItemAdapter(tempKategori,DashboardFragment.this);
                 recyclerView.setAdapter(adapter);
             }
 
